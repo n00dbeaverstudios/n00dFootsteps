@@ -1,0 +1,34 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "2.0.2",
+	"FriendlyName": "n00dFootsteps",
+	"Description": "n00dbeaver Studios\r\n\t\r\n\t\tA light-weight but powerful plug and play framework for replicated footsteps functionality for any skeletal mesh that has an animation, with BP scripting front end examples to get you moving!",
+	"Category": "n00d",
+	"CreatedBy": "n00dbeaver Studios",
+	"CreatedByURL": "https://www.n00dbeaverstudios.com/",
+	"DocsURL": "https://n00dfootsteps.n00dbeaverstudios.com/",
+	"MarketplaceURL": "https://publish.unrealengine.com/v3/edit-product/f1660ba30bf749e0baf7be8fcceef36e",
+	"SupportURL": "epicgames@n00dbeaverstudios.com",
+	"EngineVersion": "4.25.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "n00dFootsteps",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		}
+	]
+}
