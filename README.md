@@ -20,7 +20,4 @@ ___
 
 * To use the plugin in your own project, go [grab it from the Marketplace](https://www.unrealengine.com/marketplace/en-US/product/n00dfootsteps), otherwise, f you can't wait for the latest official release - choose your version from the Branch dropdown menu, click on the Code button and download as a zip - then copy / paste the plugin into your own project. 
 
-* To contribute to the repo, click on the Code dropdown menu and Open With GitHub Desktop and make pull requests to share your changes!
-
-
-#### Thanks for participating!
+* If you want to contribute to the repo, click on the Code dropdown menu and Open With GitHub Desktop and make pull requests to share your changes!
