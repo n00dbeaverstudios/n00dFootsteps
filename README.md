@@ -1,5 +1,5 @@
 # n00dFootsteps
-n00dFootsteps 2.0 is a free an open source Unreal Engine plugin so you may have the all important footsteps mechanics up and running in a project in a matter of minutes. Network replicated and optimised to use minimal bandwidth as possible.
+n00dFootsteps 2.0 is a free an open source Unreal Engine plugin so you may have the all important replicated footsteps mechanics up and running in a project in a matter of minutes.
 
 ### Directions
 
