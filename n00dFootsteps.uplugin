@@ -1,9 +1,9 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "2.0.2",
+	"VersionName": "2.0.3",
 	"FriendlyName": "n00dFootsteps",
-	"Description": "n00dbeaver Studios\r\n\t\r\n\t\tA light-weight but powerful plug and play framework for replicated footsteps functionality for any skeletal mesh that has an animation, with BP scripting front end examples to get you moving!",
+	"Description": "A light-weight but powerful plug and play framework for replicated footsteps functionality for any skeletal mesh that has an animation, with BP scripting front end examples to get you moving!",
 	"Category": "n00d",
 	"CreatedBy": "n00dbeaver Studios",
 	"CreatedByURL": "https://www.n00dbeaverstudios.com/",
