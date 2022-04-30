@@ -9,7 +9,7 @@ A fork of this repo on this branch can safely nest inside your project's Plugins
 
 #### Project Branch
 
-This allows you to see how the project config is setup while also enabling the ability to add the repo directly into your project's Plugins folder
+This allows you to see how the project config is setup - dump your copy of the plugin in the project's Plugins folder (create one if it doesn't exist)
 
 ### Directions
 
