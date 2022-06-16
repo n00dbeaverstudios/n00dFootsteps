@@ -94,6 +94,7 @@ struct FN00dFootstepsDecalSettings
 		Opacity = 1.0f;
 		Fade = 3.0f;
 		Duration = 3.0f;
+		Colour = FLinearColor();
 	}
 };
 

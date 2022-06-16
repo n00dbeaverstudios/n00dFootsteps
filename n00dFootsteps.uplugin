@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "2.0.3",
+	"VersionName": "2.0.4",
 	"FriendlyName": "n00dFootsteps",
 	"Description": "A light-weight but powerful plug and play framework for replicated footsteps functionality for any skeletal mesh that has an animation, with BP scripting front end examples to get you moving!",
 	"Category": "n00d",
