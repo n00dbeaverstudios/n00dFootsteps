@@ -1,4 +1,4 @@
-/* © Copyright 2020-2021 | n00dbeaver Studios | Developed by db AKA DebellicA */
+// Copyright (c) Developed by Josh (db) Debelec - Published by n00dbeaver Studios 2022 - All Rights Reserved. 
 
 
 #include "N00dFootstepsComponent.h"
@@ -10,8 +10,6 @@ UN00dFootstepsComponent::UN00dFootstepsComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
 
-
-	// ...
 }
 
 
@@ -35,44 +33,21 @@ void UN00dFootstepsComponent::TickComponent(float DeltaTime, ELevelTick TickType
 
 
 
-// MASTER
-
-	/* Debug */
-void UN00dFootstepsComponent::FootstepsDebug(const FString InString, const FDebugOptions Options, class UUserWidget* &DebugWidgetOut, FString &OutString, FDebugOptions &OutOptions)
+// print footstep debug
+void UN00dFootstepsComponent::PrintFootstepDebug_Implementation(const FString& InString, FLinearColor TextColour, float Duration, FGameplayTag DebugTag)
 {
-	// ...
 }
 
-	/* Create Debug Widget */
-bool UN00dFootstepsComponent::CreateFootstepsDebugWidget_Implementation(class APlayerController* OwningPlayer)
-{
-	return false;
-}
-
-	/* Component Disabled */
+// is component disabled 
 bool UN00dFootstepsComponent::IsFootstepsComponentDisabled()
 {
-	if (DisableFootstepsComponent) /* Check to see if the component has been flagged as disabled */
-	{
-		bool LocalDisabled;
-		LocalDisabled = true;
-
-			if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::White, TEXT("FOOTSTEPS ARE DISABLED!"));
-
-		return true;
-	}
-
 	return false;
 }
 
 
-// n00dFootsteps
+// MEAT 'N GRAVY
 
-
-// Meat 'n Gravy
-
-	/* Footstep */
+// footstep
 bool UN00dFootstepsComponent::Footstep_Implementation(FN00dFootstepsData Data, class USkeletalMeshComponent* OwnerMesh)
 {
 	return false;
@@ -80,13 +55,13 @@ bool UN00dFootstepsComponent::Footstep_Implementation(FN00dFootstepsData Data, c
 
 // UTILITY
 
-	/* Trace */
-bool UN00dFootstepsComponent::FootstepTrace_Implementation(FName OnSocket)
+// trace
+bool UN00dFootstepsComponent::FootstepTrace_Implementation()
 {
 	return false;
 }
 
-	/* Get Trace Point */
+// get trace point
 void UN00dFootstepsComponent::GetFootTracePoint_Implementation(const FName ForSocket, const float Differential, FVector &TracePoint)
 {
 	if (FootstepsMesh)
@@ -97,122 +72,126 @@ void UN00dFootstepsComponent::GetFootTracePoint_Implementation(const FName ForSo
 	}
 }
 
-	/* Notify */
+// notify
 bool UN00dFootstepsComponent::FootstepNotify_Implementation()
 {
 	return false;
 }
 
-/* Set Owning Character */
+// construct footsteps character
 bool UN00dFootstepsComponent::ConstructFootstepsCharacter_Implementation(class ACharacter* OwningPawn)
 {
 	return false;
 }
 
+// load footsteps settings
+void UN00dFootstepsComponent::LoadFootstepsSettings_Implementation()
+{
+}
 
 // EFFECTS
 
-	/* Particle Effect */
+// particle effect
 bool UN00dFootstepsComponent::FootstepEffect_Implementation()
 {
 	return false;
 }
 
+// effect material
 bool UN00dFootstepsComponent::FootstepEffectMaterial_Implementation(UPrimitiveComponent * SystemComponent)
 {
 	return false;
 }
 
-	/* Cascade */
+// cascade 
 bool UN00dFootstepsComponent::CascadeFootstep_Implementation()
 {
 	return false;
 }
 
-	/* Niagara */
+// niagara
 bool UN00dFootstepsComponent::NiagaraFootstep_Implementation()
 {
 	return false;
 }
 
-	/* Decal */
+// decal 
 bool UN00dFootstepsComponent::FootstepDecal_Implementation()
 {
 	return false;
 }
 
-	/* Sound */
+// sound
 bool UN00dFootstepsComponent::FootstepSound_Implementation()
 {
 	return false;
 }
 
-/* Sound Check */
+// sound check 
 bool UN00dFootstepsComponent::AddFootstepToActiveSound_Implementation(const int32 New)
 {
 	return false;
 }
 
-	/* Apply Sound Parameters */
+// apply sound paramaters
 bool UN00dFootstepsComponent::ApplyFootstepSoundParameters_Implementation(class UAudioComponent* ApplyToComponent)
 {
 	return false;
 }
 
-	/* Audio Finished */
+// audio finished
 void UN00dFootstepsComponent::FootstepAudioFinished_Implementation()
 {
 	// ...
 }
 
-/* Handle Audio Finished */
+// handle audio finished
 bool UN00dFootstepsComponent::RemoveFootstepFromActiveSound_Implementation()
 {
 	return false;
 }
 
-	/* Get Footprint */
+// get footprint
 void UN00dFootstepsComponent::GetFootprint_Implementation(UMaterialInterface* &Footprint, FN00dFootstepsDecalSettings &Details)
 {
 
 }
 
-/* Get Random Foley Wave */
+// get random foley wave
 void UN00dFootstepsComponent::GetRandomFootstepFoleyWave_Implementation(class USoundWave* &WaveToUse, float &AtVolume)
 {
 
 }
 
-/* Get Random Surface Wave */
+// get random surface wave
 void UN00dFootstepsComponent::GetRandomFootstepSurfaceWave_Implementation(class USoundWave* &WaveToUse)
 {
 
 }
 
+// get current footstep effect
+void UN00dFootstepsComponent::GetCurrentFootstepEffect_Implementation(EPhysicalSurface ForSurface, FN00dFootstepsEffectMap& Effect)
+{
+}
 
 
 // CHECKS
 
-
-
-
-	/* Mesh Check */
+// mesh check 
 bool UN00dFootstepsComponent::FootstepsMeshCheck_Implementation(class USkeletalMeshComponent* ActiveMesh)
 {
 	return false;
 }
 
+// SETTERS
 
-// Setters
-
-
-	/* Set Foley */
+// set foley 
 void UN00dFootstepsComponent::SetFootstepFoley_Implementation(const struct FGameplayTag FoleyType)
 {
 
 }
 
-	/* Set Should Foley */
+// set should foley
 void UN00dFootstepsComponent::SetShouldFootstepFoley(const bool DoTheFoley)
 {
 	if (DoTheFoley)
@@ -226,28 +205,34 @@ void UN00dFootstepsComponent::SetShouldFootstepFoley(const bool DoTheFoley)
 	}
 }
 
-	/* Set Footprint */
+// set footprint 
 void UN00dFootstepsComponent::SetFootprint_Implementation(struct FGameplayTag FootprintType)
 {
 	//... 
 }
 
-	/* Set Speed */
+// set speed
 void UN00dFootstepsComponent::SetFootstepsSpeed_Implementation(struct FGameplayTag Speed)
 {
 	//...
 }
 
-	/* Set Decal Rotation */
+// set decal rotation
 bool UN00dFootstepsComponent::SetFootstepDecalRotation_Implementation()
 {
 	return false;
 }
 
-	/* Set Footsteps Mesh Component */
+// set mesh component
 bool UN00dFootstepsComponent::ConstructFootstepsMesh_Implementation(class USkeletalMeshComponent* Mesh)
 {
 	return false;
 }
 
+// get footsteps settings
+void UN00dFootstepsComponent::GetFootstepsSettings(UN00dFootstepsSettings*& FootstepsSettings)
+{
+	UN00dFootstepsSettings* Settings = GetMutableDefault<UN00dFootstepsSettings>();
+	FootstepsSettings = Settings;
+}
 

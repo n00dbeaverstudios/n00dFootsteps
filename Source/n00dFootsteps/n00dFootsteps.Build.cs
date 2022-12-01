@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) Developed by Josh (db) Debelec - Published by n00dbeaver Studios 2022 - All Rights Reserved. 
 
 using UnrealBuildTool;
 
@@ -13,7 +13,6 @@ public class n00dFootsteps : ModuleRules
 			new string[]
 			{
 				"Core",
-                "CoreUObject",
                 "Engine",
                 "InputCore",
                 "UMG",

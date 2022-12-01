@@ -26,26 +26,26 @@ class N00DFOOTSTEPS_API IN00dFootstepsInterface
 public:
 
 	// Footstep
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00dAssets|Footsteps|Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00d|Footsteps|Interface")
 		void N00dFootstep (FN00dFootstepsData Data, class USkeletalMeshComponent* Mesh);
 
 	// The current physical surface
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00dAssets|Footsteps|Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00d|Footsteps|Interface")
 		void N00dDebugFootstepsSurface(EPhysicalSurface Type);
 	// The number of active sounds
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00dAssets|Footsteps|Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00d|Footsteps|Interface")
 		void N00dDebugFootstepsActiveSounds(int32 NumCurrentlyActive);
 	// The speed we are at
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00dAssets|Footsteps|Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00d|Footsteps|Interface")
 		void N00dDebugFootstepsSpeed(FGameplayTag Speed);
 	// The sound to play alongside the footsteps
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00dAssets|Footsteps|Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00d|Footsteps|Interface")
 		void N00dDebugFootstepsFoley(FGameplayTag Foley);
 	// A decal representing the footprint
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00dAssets|Footsteps|Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00d|Footsteps|Interface")
 		void N00dDebugFootstepsFootprint(FGameplayTag Footprint);
 	// Set the foot side
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00dAssets|Footsteps|Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "N00d|Footsteps|Interface")
 		void N00dDebugFootstepsFoot(bool LeftFoot);
 
 

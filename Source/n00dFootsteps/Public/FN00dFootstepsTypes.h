@@ -1,4 +1,4 @@
-/* © Copyright 2020-2021 | n00dbeaver Studios | Developed by db AKA DebellicA */
+// Copyright (c) Developed by Josh (db) Debelec - Published by n00dbeaver Studios 2022 - All Rights Reserved. 
 
 #pragma once
 
@@ -8,13 +8,14 @@
 #include "Math/Color.h"
 #include "Sound/SoundCue.h"
 #include "GameplayTagContainer.h"
+#include "Engine/DataTable.h"
 
 #include "FN00dFootstepsTypes.generated.h"
 
 
 
 USTRUCT(BlueprintType)
-struct FN00dFootstepsData
+struct FN00dFootstepsData : public FTableRowBase
 {
 	GENERATED_BODY()
 
@@ -39,51 +40,27 @@ struct FN00dFootstepsData
 };
 
 USTRUCT(BlueprintType)
-struct FDebugOptions
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		bool PrintToWidget;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		FGameplayTag DebugType;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		FColor TextColour;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		float Duration;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		bool PrintToScreen;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		bool PrintToLog;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		FString Append;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
-		bool AppendAsSuffix;
-
-};
-
-USTRUCT(BlueprintType)
 struct FN00dFootstepsDecalSettings
 {
 	GENERATED_BODY()
 
 	// Multiplier
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents|Footsteps|Decal Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		float Size;
 	// Destroy decal component when the time runs out
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents|Footsteps|Decal Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		float Lifetime;
 	// The base opacity this footprint should be - fades to 0 then kills
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents|Footsteps|Decal Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		float Opacity;
 	// When to start fading the footprint out of existence. A fade of 0 and N duration = instant destroy footprint after N time has passed. 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents|Footsteps|Decal Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		float Fade;
 	// The duration it takes for the decal to fade out
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents|Footsteps|Decal Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		float Duration;
 	// Tint of the decal for this surface type
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents|Footsteps|Decal Settings")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		struct FLinearColor Colour;
 
 	// Default Constructor
@@ -103,11 +80,11 @@ struct FN00dFootstepsFootprints
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Footprints")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		FN00dFootstepsDecalSettings Settings;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Footprints")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		class UMaterialInterface* LeftFoot;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Footprints")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		class UMaterialInterface* RightFoot;
 
 	// Default Constructor
@@ -119,24 +96,24 @@ struct FN00dFootstepsFootprints
 };
 
 USTRUCT(BlueprintType)
-struct FN00dFootstepsEffectMap
+struct FN00dFootstepsEffectMap : public FTableRowBase
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Effect Map")
+		
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
+		TEnumAsByte<EPhysicalSurface> Surface;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		class UParticleSystem* CascadeEffect;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Effect Map")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		class UNiagaraSystem* NiagaraEffect;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Effect Map")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		TArray<UMaterialInterface*> Materials;
-	// The MasterCUE is where the system sets parameters such as Foley, but you can use your own instead if desired.
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Effect Map")
-		class USoundCue* Sound;
 	// Any sounds for this surface definition - the MasterCUE will play these
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Effect Map")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		TArray<USoundWave*> Waves;
 	// Footprint settings and definitions
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Effect Map")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		TMap<struct FGameplayTag, struct FN00dFootstepsFootprints> Footprints;
 
 	// Default Constructor
@@ -144,7 +121,6 @@ struct FN00dFootstepsEffectMap
 	{
 		CascadeEffect = nullptr;
 		NiagaraEffect = nullptr;
-		Sound = nullptr;
 	}
 
 };
@@ -154,9 +130,9 @@ struct FN00dFootstepsWavesVolume
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Waves Volume")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		float Volume;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "N00dComponents |Footsteps |Waves Volume")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = default)
 		TArray<USoundWave*> Waves;
 
 	// Default Constructor
