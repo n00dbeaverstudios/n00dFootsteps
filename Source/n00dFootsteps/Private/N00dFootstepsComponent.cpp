@@ -31,13 +31,6 @@ void UN00dFootstepsComponent::TickComponent(float DeltaTime, ELevelTick TickType
 	// ...
 }
 
-
-
-// print footstep debug
-void UN00dFootstepsComponent::PrintFootstepDebug_Implementation(const FString& InString, FLinearColor TextColour, float Duration, FGameplayTag DebugTag)
-{
-}
-
 // is component disabled 
 bool UN00dFootstepsComponent::IsFootstepsComponentDisabled()
 {
@@ -47,6 +40,7 @@ bool UN00dFootstepsComponent::IsFootstepsComponentDisabled()
 
 // MEAT 'N GRAVY
 
+
 // footstep
 bool UN00dFootstepsComponent::Footstep_Implementation(FN00dFootstepsData Data, class USkeletalMeshComponent* OwnerMesh)
 {
@@ -54,6 +48,12 @@ bool UN00dFootstepsComponent::Footstep_Implementation(FN00dFootstepsData Data, c
 }
 
 // UTILITY
+
+// show debug widget
+bool UN00dFootstepsComponent::ShowFootstepsDebugWidget_Implementation()
+{
+	return false;
+}
 
 // trace
 bool UN00dFootstepsComponent::FootstepTrace_Implementation()
@@ -78,12 +78,6 @@ bool UN00dFootstepsComponent::FootstepNotify_Implementation()
 	return false;
 }
 
-// construct footsteps character
-bool UN00dFootstepsComponent::ConstructFootstepsCharacter_Implementation(class ACharacter* OwningPawn)
-{
-	return false;
-}
-
 // load footsteps settings
 void UN00dFootstepsComponent::LoadFootstepsSettings_Implementation()
 {
@@ -93,12 +87,6 @@ void UN00dFootstepsComponent::LoadFootstepsSettings_Implementation()
 
 // particle effect
 bool UN00dFootstepsComponent::FootstepEffect_Implementation()
-{
-	return false;
-}
-
-// effect material
-bool UN00dFootstepsComponent::FootstepEffectMaterial_Implementation(UPrimitiveComponent * SystemComponent)
 {
 	return false;
 }
@@ -128,7 +116,7 @@ bool UN00dFootstepsComponent::FootstepSound_Implementation()
 }
 
 // sound check 
-bool UN00dFootstepsComponent::AddFootstepToActiveSound_Implementation(const int32 New)
+bool UN00dFootstepsComponent::AddFootstepToActiveSound_Implementation()
 {
 	return false;
 }
@@ -149,12 +137,6 @@ void UN00dFootstepsComponent::FootstepAudioFinished_Implementation()
 bool UN00dFootstepsComponent::RemoveFootstepFromActiveSound_Implementation()
 {
 	return false;
-}
-
-// get footprint
-void UN00dFootstepsComponent::GetFootprint_Implementation(UMaterialInterface* &Footprint, FN00dFootstepsDecalSettings &Details)
-{
-
 }
 
 // get random foley wave
@@ -223,16 +205,11 @@ bool UN00dFootstepsComponent::SetFootstepDecalRotation_Implementation()
 	return false;
 }
 
-// set mesh component
-bool UN00dFootstepsComponent::ConstructFootstepsMesh_Implementation(class USkeletalMeshComponent* Mesh)
-{
-	return false;
-}
-
 // get footsteps settings
 void UN00dFootstepsComponent::GetFootstepsSettings(UN00dFootstepsSettings*& FootstepsSettings)
 {
 	UN00dFootstepsSettings* Settings = GetMutableDefault<UN00dFootstepsSettings>();
 	FootstepsSettings = Settings;
 }
+
 

@@ -21,11 +21,11 @@ public:
 	// Sets default values for this component's properties
 	UN00dFootstepsComponent();
 
+protected:
+
 	///////////////////////////////
 	//	HIDDEN FROM DESIGNER
 	///////////////////////////////
-
-protected:
 
 	// These values can only be written to or read from
 
@@ -66,7 +66,6 @@ protected:
 	UPROPERTY(BlueprintReadWrite, Category = "N00d|Footsteps")
 		TArray<FN00dFootstepsEffectMap> LoadedEffects;
 
- 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -85,9 +84,6 @@ protected:
 	///////////////////////////////
 
 
-	// Print a debug
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
-		void PrintFootstepDebug(const FString& InString = FString(TEXT("n00dFootsteps Debug")), FLinearColor TextColour = FLinearColor(1.0, 1.0, 0.0), float Duration = 2.f, FGameplayTag DebugTag = FGameplayTag());
 	// Is the component disabled
 	UFUNCTION(BlueprintCallable, Category = "N00d|Footsteps|Debug")
 		bool IsFootstepsComponentDisabled();
@@ -107,6 +103,9 @@ protected:
 
 	// UTILITY
 
+	// Do the actual thing after passing the conditions
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
+		bool ShowFootstepsDebugWidget();
 	// Trace from the defined socket, between the specified points 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		bool FootstepTrace();
@@ -116,9 +115,6 @@ protected:
 	// Do the actual thing after passing the conditions
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		bool FootstepNotify();
-	// Calling this is not mandatory and is used to reference the character for debug purposes.  
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
-		bool ConstructFootstepsCharacter(class ACharacter* Character);
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		void LoadFootstepsSettings();
 
@@ -127,9 +123,6 @@ protected:
 	// Play the effect 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|Effects")
 		bool FootstepEffect();
-	// Apply a material to the effect
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|Effects")
-		bool FootstepEffectMaterial(UPrimitiveComponent* SystemComponent);
 	// Override for handling Cascade effects
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|Effects")
 		bool CascadeFootstep();
@@ -144,7 +137,7 @@ protected:
 		bool FootstepSound();
 	// Override for handling the sound check 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|Effects")
-		bool AddFootstepToActiveSound(int32 Add);
+		bool AddFootstepToActiveSound();
 	// Override for Applying any specific sound parameters for our defined CUE 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|Effects")
 		bool ApplyFootstepSoundParameters(class UAudioComponent* AComponent);
@@ -154,9 +147,6 @@ protected:
 	// Handle the actual AudioFinished event that isn't allowed properties 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|Effects")
 		bool RemoveFootstepFromActiveSound();
-	// Get the decal and its relevant settings 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|Effects")
-		void GetFootprint(UMaterialInterface* &FootprintMaterial, FN00dFootstepsDecalSettings &FootprintDetails);
 	// Play a random sound from the array for the current surface 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|Effects")
 		void GetRandomFootstepFoleyWave(class USoundWave* &Wave, float &Volume);
@@ -190,9 +180,6 @@ protected:
 	// Set decal rotation
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		bool SetFootstepDecalRotation();
-	// Reference the mesh to use
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
-		bool ConstructFootstepsMesh(class USkeletalMeshComponent* Mesh);
 	// Get the footsteps settings
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|System")
 		void GetFootstepsSettings(UN00dFootstepsSettings*& FootstepsSettings);
