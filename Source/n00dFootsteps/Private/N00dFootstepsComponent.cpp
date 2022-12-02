@@ -157,15 +157,13 @@ void UN00dFootstepsComponent::GetCurrentFootstepEffect_Implementation(EPhysicalS
 }
 
 
-// CHECKS
+// SETTERS
 
 // mesh check 
 bool UN00dFootstepsComponent::FootstepsMeshCheck_Implementation(class USkeletalMeshComponent* ActiveMesh)
 {
 	return false;
 }
-
-// SETTERS
 
 // set foley 
 void UN00dFootstepsComponent::SetFootstepFoley_Implementation(const struct FGameplayTag FoleyType)

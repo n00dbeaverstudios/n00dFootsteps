@@ -153,15 +153,12 @@ protected:
 	// Play a random sound from the array for the current surface 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|Effects")
 		void GetRandomFootstepSurfaceWave(class USoundWave* &Wave);
+	// Set decal rotation
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|Effects")
+		bool SetFootstepDecalRotation();
 	// Get the effect for the defined surface
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|System")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|Effects")
 		void GetCurrentFootstepEffect(EPhysicalSurface ForSurface, FN00dFootstepsEffectMap &Effect);
-
-	// CHECKS
-
-	// Override for handling check on the mesh 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|Checks")
-		bool FootstepsMeshCheck(class USkeletalMeshComponent* ActiveMesh);
 
 	// SETTERS
 
@@ -177,9 +174,9 @@ protected:
 	// Set the desired speed
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		void SetFootstepsSpeed(struct FGameplayTag Speed);
-	// Set decal rotation
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
-		bool SetFootstepDecalRotation();
+	// Override for handling check on the mesh 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|System")
+		bool FootstepsMeshCheck(class USkeletalMeshComponent* ActiveMesh);
 	// Get the footsteps settings
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "N00d|Footsteps|System")
 		void GetFootstepsSettings(UN00dFootstepsSettings*& FootstepsSettings);
