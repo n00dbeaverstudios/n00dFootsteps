@@ -89,7 +89,6 @@ protected:
 		bool IsFootstepsComponentDisabled();
 
 
-
 	///////////////////////////////
 	//	FUNCTIONALITY
 	///////////////////////////////
