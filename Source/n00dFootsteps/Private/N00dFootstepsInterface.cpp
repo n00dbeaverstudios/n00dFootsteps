@@ -1,4 +1,4 @@
-/* © Copyright 2020-2021 | n00dbeaver Studios | Developed by db AKA DebellicA */
+// Copyright (c) Developed by Josh (db) Debelec - Published by n00dbeaver Studios 2022 - All Rights Reserved. 
 
 
 #include "N00dFootstepsInterface.h"
