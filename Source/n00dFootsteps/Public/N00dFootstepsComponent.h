@@ -23,6 +23,8 @@ public:
 
 protected:
 
+	/////////////////////////////////////////////// PROPERTIES \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 	///////////////////////////////
 	//	HIDDEN FROM DESIGNER
 	///////////////////////////////
@@ -102,7 +104,7 @@ protected:
 
 	// UTILITY
 
-	// Do the actual thing after passing the conditions
+	// Show the debug widget if we're debugging
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		bool ShowFootstepsDebugWidget();
 	// Trace from the defined socket, between the specified points 
