@@ -101,6 +101,9 @@ protected:
 	// Called on AnimNotify to initialise the footstep logic per execute
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		bool Footstep(FN00dFootstepsData Data, class USkeletalMeshComponent* OwnerMesh);
+// Build references to the owner objects we care about
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
+		bool BuildReferences();
 
 	// UTILITY
 
@@ -116,6 +119,7 @@ protected:
 	// Do the actual thing after passing the conditions
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		bool FootstepNotify();
+	// Load the plugin's settings
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "N00d|Footsteps|System")
 		void LoadFootstepsSettings();
 

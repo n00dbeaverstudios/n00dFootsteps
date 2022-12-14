@@ -47,6 +47,12 @@ bool UN00dFootstepsComponent::Footstep_Implementation(FN00dFootstepsData Data, c
 	return false;
 }
 
+// build references
+bool UN00dFootstepsComponent::BuildReferences_Implementation()
+{
+	return false;
+}
+
 // UTILITY
 
 // show debug widget
