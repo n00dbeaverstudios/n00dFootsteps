@@ -1,4 +1,4 @@
-// Copyright (c) Developed by Josh (db) Debelec - Published by n00dbeaver Studios 2022 - All Rights Reserved. 
+// Copyright Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
 
@@ -8,17 +8,26 @@ public class n00dFootsteps : ModuleRules
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
+		PublicIncludePaths.AddRange(
+			new string[] {
+				// ... add public include paths required here ...
+			}
+			);
+				
+		
+		PrivateIncludePaths.AddRange(
+			new string[] {
+				// ... add other private include paths required here ...
+			}
+			);
+			
 		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
 				"Core",
-                "Engine",
-                "InputCore",
-                "UMG",
-                "GameplayTags",
-				"Niagara"
-            }
+				// ... add other public dependencies that you statically link with here ...
+			}
 			);
 			
 		
@@ -29,14 +38,16 @@ public class n00dFootsteps : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				// ... add private dependencies that you statically link with here ...	
 			}
 			);
-
-        if (Target.Version.MinorVersion != 25)
-        {
-            PublicDependencyModuleNames.Add("PhysicsCore");
-        };
-    }
-
+		
+		
+		DynamicallyLoadedModuleNames.AddRange(
+			new string[]
+			{
+				// ... add any modules that your module loads dynamically here ...
+			}
+			);
+	}
 }
-
