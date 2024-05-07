@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) Developed by Josh (db) Debelec - Published by n00dbeaver Studios 2020-2024 - All Rights Reserved. 
 
 using UnrealBuildTool;
 
