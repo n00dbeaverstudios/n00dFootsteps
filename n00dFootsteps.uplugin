@@ -1,9 +1,9 @@
 {
 	"FileVersion": 3,
 	"Version": 4,
-	"VersionName": "4.0.2",
+	"VersionName": "4.0.3",
 	"FriendlyName": "n00dFootsteps",
-	"Description": "A light-weight but powerful plug and play framework for replicated footsteps functionality for any skeletal mesh that has an animation, with BP scripting front end examples to get you moving!",
+	"Description": "Step Up Your Game’s Soundscape! Bring every step to life, integrate replicated footsteps mechanics into your projects and enhance your game’s auditory environment and immerse players with every move.",
 	"Category": "n00d",
 	"CreatedBy": "n00dbeaver Studios",
 	"CreatedByURL": "https://www.n00dbeaverstudios.com/",
